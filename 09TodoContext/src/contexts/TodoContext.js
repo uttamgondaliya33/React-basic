@@ -1,10 +1,19 @@
-import { createContext , useContext } from "react";
+import { createContext, useContext } from "react";
 
-export const TodoContext = createContext({})
+export const TodoContext = createContext({
+    todos: [],
 
+    addTodo: (todo) => {},
 
-export const useTodo = () =>{
-    return useContext(TodoContext)
-}
+    updateTodo: (id, todo) => {},
 
-export const Todoprovider = TodoContext.Provider
+    deleteTodo: (id) => {},
+
+    toggleComplete: (id) => {},
+});
+
+export const useTodo = () => {
+    return useContext(TodoContext);
+};
+
+export const TodoProvider = TodoContext.Provider;
